@@ -101,7 +101,31 @@ musicButton.addEventListener('click', function() {
 
 
 
+});
 
-
-
+document.addEventListener('DOMContentLoaded', function() {
+  // Create the image container element
+  const imageContainer = document.createElement('div');
+  imageContainer.className = 'image-container';
+  document.body.appendChild(imageContainer);
+  
+  // Create the image element
+  const displayedImage = document.createElement('img');
+  // Set your image source here
+  displayedImage.src = 'image.jpg'; // Replace with your image path
+  displayedImage.alt = 'Special Birthday Image';
+  imageContainer.appendChild(displayedImage);
+  
+  // Get the button
+  const showImageButton = document.getElementById('showImageButton');
+  
+  // Add click event to show image
+  showImageButton.addEventListener('click', function() {
+    imageContainer.style.display = 'flex';
+  });
+  
+  // Click anywhere to close the image
+  imageContainer.addEventListener('click', function() {
+    imageContainer.style.display = 'none';
+  });
 });
